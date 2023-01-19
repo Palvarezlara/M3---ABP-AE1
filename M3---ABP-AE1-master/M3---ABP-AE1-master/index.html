@@ -57,7 +57,7 @@
   <div class="container text-center">
 
     <div class="card">
-      <img src="..." class="card-img-top shadow" alt="...">
+      <img id="foto" src="..." class="card-img-top shadow" alt="...">
       <div class="card-body">
         <h5 class="card-title" id="region">Región:</h5>
         <p class="card-text" id="atractivos">Atractivos: </p>
@@ -73,12 +73,15 @@
   function mostrar(nombre) {
     const titulo = document.getElementById('region');
     const descripcion = document.getElementById('atractivos');
+    const imagen = document.getElementById('foto');
+
     titulo.innerHTML = nombre
 
 
-    switch(nombre) {
-      case 1: titulo.innerText ="Región de Arica y Parinacota" 
-              descripcion.innerText = "linda linda región"
+    switch (nombre) {
+      case 1: titulo.innerText = "Región de Arica y Parinacota";
+        descripcion.innerText = "En la gastronomía tradicional de la región de Arica y Parinacota se refleja la diversidad cultural del territorio, con la herencia culinaria de los pueblos andinos, afrodescendientes y diversas migraciones que han ocurrido. Desde los pueblos originarios que han cultivado especies locales como papa y choclo. Entre los platos tradicionales de los pueblos andinos destacan la guatia, la kalapurka, kalatanta,";
+        imagen.src = "./img/Parinacota.jpg";
         break;
 
         case 2: titulo.innerText = "Región de Tarapacá" 

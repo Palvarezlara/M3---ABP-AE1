@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>M3 - ABP AE1</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <style>
+    html {
+      width: 80%;
+    }
+    #figuras {
+      list-style: none;
+    }
+
+
+    .arriba {
+      transform: scale(1.2);
+    }
+
+    .abajo {
+      transform: scale(0.8);
+    }
+
+    .borde {
+      border: 1px solid red;
+    }
+    .mapa {
+      margin: left 20px;;
+    }
+    .card {
+      background-color: #eeeeee;
+     align-items: center;
+     width: 50%;
+     font-size:medium;
+     position: relative;
+    }
+    .card-img, .card-img-bottom, .card-img-top {
+width: 60%;
+margin-top: 10px;
+
+    }
+  </style>
+</head>
+
+<body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+  <div class="text-center">
+    <map name="mapa" class="figuras">
+      <area shape="circle" coords="40,100,15" href="" onmouseover="mostrar(1)" onmouseout="ocultar()" />
+      <area shape="circle" coords="90,100,15" href="" onmouseover="mostrar(2)" onmouseout="ocultar()" />
+      <area shape="rectangle" coords="150,50,230,130" href="" onmouseover="mostrar(3)" onmouseout="ocultar()" />
+      <area shape="rectangle" coords="270,50,390,150" href="" onmouseover="mostrar(4)" onmouseout="ocultar()" />
+      <area shape="rectangle" coords="400,100,490,160" href="" onmouseover="mostrar(5)" onmouseout="ocultar()" />
+      <area shape="circle" coords="510,140,20" href="" onmouseover="mostrar(6)" onmouseout="ocultar()" />
+      <area shape="circle" coords="550,130,20" href="" onmouseover="mostrar(7)" onmouseout="ocultar()" />
+      <area shape="circle" coords="580,140,20" href="" onmouseover="mostrar(8)" onmouseout="ocultar()" />
+      <area shape="circle" coords="620,160,20" href="" onmouseover="mostrar(9)" onmouseout="ocultar()" />
+      <area shape="circle" coords="660,170,15" href="" onmouseover="mostrar(10)" onmouseout="ocultar()" />
+      <area shape="circle" coords="695,170,15" href="" onmouseover="mostrar(11)" onmouseout="ocultar()" />
+      <area shape="circle" coords="750,180,30" href="" onmouseover="mostrar(12)" onmouseout="ocultar()" />
+      <area shape="circle" coords="800,190,15" href="" onmouseover="mostrar(13)" onmouseout="ocultar()" />
+      <area shape="rectangle" coords="825,175,925,215" href="" onmouseover="mostrar(14)" onmouseout="ocultar()" />
+      <area shape="rectangle" coords="950,175,1155,255" href="" onmouseover="mostrar(15)" onmouseout="ocultar()" />
+      <area shape="rectangle" coords="1180,125,1450,255" href="" onmouseover="mostrar(16)" onmouseout="ocultar()" />
+    </map>
+
+    <img src="https://aprotur.cl/wp-content/uploads/2020/07/sur.png" usemap="#mapa">
+  </div>
+
+
+
+  <div class="container text-center">
+
+    <div class="card">
+      <img id="foto" src="..." class="card-img-top shadow" alt="...">
+      <div class="card-body">
+        <h5 class="card-title" id="region">Región:</h5>
+        <p class="card-text" id="atractivos">Atractivos: </p>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+</body>
+
+<script>
+  function mostrar(nombre) {
+    const titulo = document.getElementById('region');
+    const descripcion = document.getElementById('atractivos');
+    const imagen = document.getElementById('foto');
+
+    titulo.innerHTML = nombre
+
+
+    switch (nombre) {
+      case 1: titulo.innerText = "Región de Arica y Parinacota";
+        descripcion.innerText = "En la gastronomía se refleja la diversidad cultural del territorio, con la herencia culinaria de los pueblos andinos, afrodescendientes y diversas migraciones que han ocurrido. ";
+        imagen.src = "./img/Parinacota.jpg";
+        break;
+
+      case 2: titulo.innerText = "Región de Tarapacá";
+        descripcion.innerText = "La influencia de tradiciones se reflejan en la fiesta de La Tirana que ahora se realiza el 16 de julio en el pueblo de la Tirana, en donde a través de la realización de bailes como la diablada, los morenos, los gitanos, las kullaguadas, sambos, entre otros que buscan venerar a la Virgen del Carmen. ";
+        imagen.src="./img/Tirana02.jpg";
+        break;
+
+      case 3: titulo.innerText = "Región de Antofagasta";
+        descripcion.innerText = "Conocida como la “Perla del Norte”, Antofagasta es una ciudad de desierto y mar. Dotada de sorprendentes formaciones geológicas, acantilados, cálidas aguas, y de una hermosa flora y fauna típica. ";
+        imagen.src="./img/Antofagasta.avif";
+        break;
+
+      case 4: titulo.innerText = "Región de Atacama";
+        descripcion.innerText = "Ubicada en una zona del desierto donde florecen bellos colores, en un fenómeno único en el mundo conocido como Desierto Florido. Cuenta con playas paradisíacas de arenas blancas y aguas turquesas como los son Caldera, Playa Virgen y Bahía Inglesa.";
+        imagen.src="./img/Atacama.jpg"
+        break;
+
+      case 5: titulo.innerText = "Región de Coquimbo";
+        descripcion.innerText = "destaca por un turismo ligado al mar, a los valles y a la astronomía. Son tres provincias que la componen Elqui, Limarí y Choapa encontrando en ellas distintos atractivos turísticos ligados a estas condiciones naturales, playas, valles, cordilleras y astronomía";
+        imagen.src="./img/Coquimbo.avif"
+        break;
+
+      case 6: titulo.innerText = "Región de Valparaíso";
+        descripcion.innerText = "Con una ubicación geográfica privilegiada que se extiende desde la Cordillera de Los Andes hasta las costas del Océano Pacífico la Región de Valparaíso busca posicionarse con una gran variedad de experiencias turísticas pensadas para todo tipo de visitantes.";
+        imagen.src="./img/valparaiso.jpg"
+        break;
+
+      case 7: titulo.innerText = "Región Metropolitana";
+        descripcion.innerText = "Las viñas del Valle del Maipo y Pirque engalanan los sabores de la zona con el dulzor de sus vinos, el deporte aventura y la conexión con la naturaleza se puede vivir en el clásico Cajón del Maipo con actividades de trekking, canopy y rafting. ";
+        imagen.src="./img/rm.jpeg"
+        break;
+
+      case 8: titulo.innerText = "Región de O'higgins";
+        descripcion.innerText = " La región es conocida por su agricultura, especialmente por su producción de vino y frutas. También cuenta con importantes recursos naturales, como agua y bosques. La capital de la región es Rancagua.";
+        imagen.src="./img/Ohiggins1.jpg"
+        break;
+
+      case 9: titulo.innerText = "Región del Maule";
+        descripcion.innerText = "Es reconocida por su rica historia, cultura y tradiciones. El valle del Maule es uno de los principales productores de vino del país, con una gran variedad de vinos típicos de la zona, como el vino de la uva Pais y el vino de la uva Carmenere.";
+        imagen.src="./img/Maule.jpg"
+        break;
+
+      case 10: titulo.innerText = "Región de Ñuble";
+        descripcion.innerText = "El Parque Nacional Nahuelbuta es uno de los principales atractivos. Además, el termalismo es una de las principales actividades turísticas, con varias localidades termales en la región.";
+        imagen.src="./img/ñuble.jpg.crdownload"
+        break;
+
+      case 11: titulo.innerText = "Región de Bio Bio";
+        descripcion.innerText = "La región cuenta con una gran variedad de paisajes, desde montañas hasta llanuras costeras. Es conocida por su rica historia indígena, su agricultura y su industria maderera. La ciudad más grande y capital de la región es Concepción.";
+        imagen.src="./img/Biobio.jpg"
+        break;
+
+      case 12: titulo.innerText = "Región de la Araucanía";
+        descripcion.innerText = " La región cuenta con extensos bosques, ríos y lagos, así como varios parques nacionales, como el Parque Nacional Conguillío. La ciudad más grande y capital de la región es Temuco.";
+        imagen.src="./img/araucania.png"
+        break;
+
+      case 13: titulo.innerText = "Region de los Ríos";
+        descripcion.innerText = " Cuenta con varios parques nacionales, como el Parque Nacional Puyehue. La ciudad más grande y capital de la región es Valdivia. Es una región con una gran variedad de actividades turísticas, como el turismo de aventura, el turismo rural y el turismo termal.";
+        imagen.src="./img/losrios.jpg"
+        break;
+      case 14: titulo.innerText = "Región de los Lagos";
+        descripcion.innerText = "Cuenta con varios parques nacionales, como el Parque Nacional Vicente Pérez Rosales. La ciudad más grande y capital de la región es Puerto Montt. Es una región turística con una gran variedad de actividades, como el turismo de aventura, el turismo rural y el turismo de cruceros.";
+        imagen.src="./img/loslagos.jpg"
+        break;
+      case 15: titulo.innerText = "Región de Aysén";
+        descripcion.innerText = "Es famosa por sus ríos y lagos, como el Lago General Carrera, el segundo lago más grande de Sudamérica. La región es poco poblada y cuenta con una economía basada en la agricultura, la ganadería y la pesca. En los últimos años, el turismo se ha convertido en una industria importante en la región.";
+        imagen.src="./img/aysen.jpg"
+        break;
+      case 16: titulo.innerText = "Región de Magallanes";
+        descripcion.innerText = "El Parque Nacional Torres del Paine, es uno de los atractivos turísticos más importantes de la región, con sus impresionantes paisajes de montañas, lagos y glaciares. Otro destino turístico popular es la Isla Navarino, que es el hogar de una gran variedad de vida silvestre, incluyendo pingüinos, cormoranes y ballenas. ";
+        imagen.src="./img/magallanes.jpg"
+        break;
+    }
+
+
+  }
+  function ocultar() { }
+
+
+</script>
+
+
+<script>
+  $("area").hover(function () {
+    $(this).toggleClass('arriba').siblings().toggleClass('abajo')
+  })</script>
+
+</html>
